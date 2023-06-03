@@ -36,21 +36,10 @@ export default function Home() {
     if (!isForward && currentCardIndex === 0) {
       setDisplayCard(InfoCardList[lastCardIndex]);
     }
-
-    restartCardFadeIn();
   };
 
   const setSpecificCard = (index: number) => {
     setDisplayCard(InfoCardList[index]);
-    restartCardFadeIn();
-  };
-
-  const restartCardFadeIn = () => {
-    let card = document.getElementById("display-card");
-
-    card?.classList.remove("fade-in");
-    void card?.offsetWidth;
-    card?.classList.add("fade-in");
   };
 
   return (
