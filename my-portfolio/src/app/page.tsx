@@ -72,12 +72,12 @@ export default function Home() {
             href="https://github.com/0xiMoron">
             <MDBIcon fab icon="github" size="lg" />
           </MDBBtn>
-          <MDBBtn
+          {/* <MDBBtn
             className="m-1"
             style={{ backgroundColor: "#dd4b39" }}
             href="#">
             <MDBIcon fab icon="google" size="lg" />
-          </MDBBtn>
+          </MDBBtn> */}
         </div>
       </section>
       <section className="card-section">
@@ -97,7 +97,23 @@ export default function Home() {
               {displayedCard.title}
             </MDBCardTitle>
             <hr></hr>
-            <MDBCardText>{displayedCard.description}</MDBCardText>
+            <MDBCardText className="card-text">
+              {displayedCard.description}
+            </MDBCardText>
+            <section className="skills-icon-section">
+              {displayedCard.icons?.map((el, i) => {
+                return (
+                  <MDBIcon
+                    fab
+                    fas
+                    className="m-1"
+                    key={i}
+                    size="2x"
+                    icon={el}
+                  />
+                );
+              })}
+            </section>
           </MDBCardBody>
         </MDBCard>
         <MDBBtn

@@ -2,6 +2,19 @@ body {
   background-color: whitesmoke !important;
 }
 
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #7ab97a;
+}
+
 .main-page {
   height: 90vh;
 }
@@ -68,7 +81,7 @@ body {
 
 .card-title {
   display: flex;
-  height: 20%;
+  min-height: 20%;
   background-color: #7ab97a;
   width: 100%;
   color: whitesmoke;
@@ -83,6 +96,24 @@ body {
   height: 80%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card-body {
+  overflow: hidden !important;
+}
+
+.card-text {
+  max-height: 60%;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  margin: 1%;
+}
+
+.skills-icon-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-section {
