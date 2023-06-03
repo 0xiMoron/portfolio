@@ -1,5 +1,18 @@
 body {
-  background-color: #121212 !important;
+  background-color: whitesmoke !important;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #7ab97a;
 }
 
 .main-page {
@@ -47,18 +60,97 @@ body {
   }
 }
 
-.card-section {
-  height: 80%;
+.links-sections {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+}
+
+.links-box {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.card-section {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  display: flex;
+  min-height: 20%;
+  background-color: #7ab97a;
+  width: 100%;
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
 }
 
 .info-card {
-  background-color: #121212 !important;
+  color: #121212;
+  width: 50%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card-body {
+  overflow: hidden !important;
+}
+
+.card-text {
+  max-height: 60%;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  margin: 1%;
+}
+
+.skills-icon-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title-and-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-link-title {
   color: #7ab97a;
-  width: 30%;
-  min-height: 60%;
-  box-shadow: 0 0 20px 5px #7ab97a !important;
+}
+
+.fade-in {
+  animation: fadeIn 3s;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

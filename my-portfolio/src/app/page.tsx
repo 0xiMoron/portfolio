@@ -36,12 +36,49 @@ export default function Home() {
     if (!isForward && currentCardIndex === 0) {
       setDisplayCard(InfoCardList[lastCardIndex]);
     }
+
+    restartCardFadeIn();
+  };
+
+  const setSpecificCard = (index: number) => {
+    setDisplayCard(InfoCardList[index]);
+    restartCardFadeIn();
+  };
+
+  const restartCardFadeIn = () => {
+    let card = document.getElementById("display-card");
+
+    card?.classList.remove("fade-in");
+    void card?.offsetWidth;
+    card?.classList.add("fade-in");
   };
 
   return (
     <main className="main-page">
       <section className="header-section">
         <h1 className="header-title">Harrison Kaide Hancock</h1>
+      </section>
+      <section className="links-sections">
+        <div className="links-box">
+          <MDBBtn
+            className="m-1"
+            style={{ backgroundColor: "#0082ca" }}
+            href="https://www.linkedin.com/in/harrison-hancock/">
+            <MDBIcon fab icon="linkedin" size="lg" />
+          </MDBBtn>
+          <MDBBtn
+            className="m-1"
+            style={{ backgroundColor: "#333333" }}
+            href="https://github.com/0xiMoron">
+            <MDBIcon fab icon="github" size="lg" />
+          </MDBBtn>
+          {/* <MDBBtn
+            className="m-1"
+            style={{ backgroundColor: "#dd4b39" }}
+            href="#">
+            <MDBIcon fab icon="google" size="lg" />
+          </MDBBtn> */}
+        </div>
       </section>
       <section className="card-section">
         <MDBBtn
@@ -54,11 +91,29 @@ export default function Home() {
           }}>
           <MDBIcon fas icon="angle-left" size="3x" />
         </MDBBtn>
-        <MDBCard className="card info-card">
+        <MDBCard className="card info-card fade-in" id="display-card">
           <MDBCardBody>
-            <MDBCardTitle>{displayedCard.title}</MDBCardTitle>
+            <MDBCardTitle className="card-title">
+              {displayedCard.title}
+            </MDBCardTitle>
             <hr></hr>
-            <MDBCardText>{displayedCard.description}</MDBCardText>
+            <MDBCardText className="card-text">
+              {displayedCard.description}
+            </MDBCardText>
+            <section className="skills-icon-section">
+              {displayedCard.icons?.map((el, i) => {
+                return (
+                  <MDBIcon
+                    fab
+                    fas
+                    className="m-1"
+                    key={i}
+                    size="2x"
+                    icon={el}
+                  />
+                );
+              })}
+            </section>
           </MDBCardBody>
         </MDBCard>
         <MDBBtn
@@ -72,7 +127,27 @@ export default function Home() {
           <MDBIcon fas icon="angle-right" size="3x" />
         </MDBBtn>
       </section>
-      <section className="footer-section"></section>
+      <section className="footer-section">
+        <div className="footer-title-and-links">
+          <p className="footer-title">Card links!</p>
+          <div className="footer-links">
+            {InfoCardList.map((el, i) => {
+              return (
+                <MDBBtn
+                  key={i}
+                  className="mx-2"
+                  color="tertiary"
+                  rippleColor="light"
+                  onClick={() => {
+                    setSpecificCard(i);
+                  }}>
+                  <p className="card-link-title">{el.title}</p>
+                </MDBBtn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
