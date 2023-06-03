@@ -26,7 +26,7 @@ export const EnglishInternshipCard = new InfoCard(
 
 export const EnglishCompanyTrainingCard = new InfoCard(
   "Company Training",
-  "e",
+  "In my second year with Serio, I was asked to lead the training of the new employees. We taught extensive classes about frontend frameworks (React, Angular, Vue), backend API’s and REST functions, agile development, microservice architecture vs the monolith, and cloud computing with containerization. I specifically was incharge of introducing Kubernetes, Docker, and various DevOps services. We then supervised their progress on their assigned projects as a “Product Manager”, debugging their code, supervising version control with git, helping with authorization services and environment setup. We had them make two microservices, a frontend made in Angular, and a backend made in .Net",
   ["git-alt", "docker", "python", "angular", "js", "css3-alt", "bootstrap"]
 );
 
