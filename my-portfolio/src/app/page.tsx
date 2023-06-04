@@ -44,36 +44,36 @@ export default function Home() {
 
   return (
     <main className="main-page">
-      <section className="header-section">
+      <section className="header-section flex-centered">
         <h1 className="header-title">Harrison Kaide Hancock</h1>
       </section>
-      <section className="links-sections">
+      <section className="flex-centered">
         <div className="links-box">
           <MDBBtn
-            className="m-1"
+            className="m-1 flex-centered social-button"
             style={{ backgroundColor: "#0082ca" }}
             href="https://www.linkedin.com/in/harrison-hancock/">
             <MDBIcon fab icon="linkedin" size="lg" />
           </MDBBtn>
           <MDBBtn
-            className="m-1"
+            className="m-1 flex-centered social-button"
             style={{ backgroundColor: "#333333" }}
             href="https://github.com/0xiMoron">
             <MDBIcon fab icon="github" size="lg" />
           </MDBBtn>
           {/* <MDBBtn
-            className="m-1"
+            className="m-1 flex-centered social-button"
             style={{ backgroundColor: "#dd4b39" }}
             href="#">
             <MDBIcon fab icon="google" size="lg" />
           </MDBBtn> */}
         </div>
       </section>
-      <section className="card-section">
+      <section className="card-section flex-centered">
         <MDBBtn
           tag="a"
           color="none"
-          className="m-5"
+          className="m-5 arrow-button"
           style={{ color: "#7ab97a" }}
           onClick={() => {
             switchInfoCard(false);
@@ -108,7 +108,7 @@ export default function Home() {
         <MDBBtn
           tag="b"
           color="none"
-          className="m-5"
+          className="m-5 arrow-button"
           style={{ color: "#7ab97a" }}
           onClick={() => {
             switchInfoCard(true);
@@ -116,7 +116,7 @@ export default function Home() {
           <MDBIcon fas icon="angle-right" size="3x" />
         </MDBBtn>
       </section>
-      <section className="footer-section">
+      <section className="flex-centered">
         <div className="footer-title-and-links">
           <p className="footer-title">Card links!</p>
           <div className="footer-links">

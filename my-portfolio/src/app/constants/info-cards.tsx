@@ -2,7 +2,7 @@ import { InfoCard } from "../models/info-card-model";
 
 export const EnglishIntroCard = new InfoCard(
   "Hello!",
-  "Welcome to my Portfolio Feel free to cycle through these cards to learn about my different projects, experiences, and future goals! Also, be sure to check the contact me page at the bottom of this page!"
+  "Welcome to my Portfolio Feel free to cycle through these cards to learn about my different projects, experiences, and future goals! This site is still currently in Development! Think of it as a Beta version of what I want it to be... Features and changes still to come are a contact me page, cool animations for the cards, more styling for mobile viewing, and more!"
 );
 
 export const EnglishAboutMeCard = new InfoCard(
