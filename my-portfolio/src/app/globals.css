@@ -1,3 +1,37 @@
+@media screen and (max-width: 990px) {
+  .header-title {
+    font-size: 200% !important;
+  }
+
+  .info-card {
+    width: 90% !important;
+  }
+  .card-title {
+    font-size: 150% !important;
+  }
+
+  .arrow-button {
+    display: none !important;
+  }
+
+  .skills-icon-section {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-title {
+    font-size: 140% !important;
+  }
+  .card-title {
+    font-size: 150% !important;
+  }
+
+  .arrow-button {
+    display: none !important;
+  }
+}
+
 body {
   background-color: whitesmoke !important;
 }
@@ -15,14 +49,22 @@ body {
   background-color: #7ab97a;
 }
 
+.flex-centered {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 .main-page {
   height: 90vh;
 }
 
+.social-button {
+  width: 25% !important;
+  min-height: 2rem !important;
+}
+
 .header-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 2rem;
 }
 
@@ -60,12 +102,6 @@ body {
   }
 }
 
-.links-sections {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .links-box {
   display: flex;
   justify-content: space-around;
@@ -74,9 +110,6 @@ body {
 
 .card-section {
   height: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .card-title {
@@ -116,12 +149,6 @@ body {
   justify-content: center;
 }
 
-.footer-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .footer-title-and-links {
   display: flex;
   flex-direction: column;
@@ -135,6 +162,8 @@ body {
 .footer-links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-link-title {
