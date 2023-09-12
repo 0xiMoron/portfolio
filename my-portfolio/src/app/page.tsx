@@ -18,7 +18,7 @@ export default function Home() {
   const [darkMode, toggleDarkModeState] = useState(false);
 
   const toggleDarkMode = () => {
-    let root = document.querySelector(":root");
+    let root = document.querySelector<HTMLElement>(":root");
     if (root != null) {
       if (!darkMode) {
         root.style.setProperty("--highlight-color", "#3A99FF");
