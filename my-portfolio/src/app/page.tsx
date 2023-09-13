@@ -1,7 +1,6 @@
 "use client";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { InfoCard } from "./models/info-card-model";
 import { EnglishIntroCard, InfoCardList } from "./constants/info-cards";
 import React, { useState } from "react";
 import {
@@ -9,13 +8,37 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBCardImage,
   MDBBtn,
   MDBIcon,
 } from "mdb-react-ui-kit";
 
 export default function Home() {
   const [displayedCard, setDisplayCard] = useState(EnglishIntroCard);
+  const [displayModeIcon, setDisplayModeIcon] = useState("moon");
+  const [darkMode, toggleDarkModeState] = useState(false);
+
+  const toggleDarkMode = () => {
+    let root = document.querySelector<HTMLElement>(":root");
+    if (root != null) {
+      if (!darkMode) {
+        root.style.setProperty("--highlight-color", "#3A99FF");
+        root.style.setProperty("--backdrop-color", "#202124");
+        root.style.setProperty("--card-background", "#1C2128");
+        root.style.setProperty("--card-text", "whitesmoke");
+        root.style.setProperty("--display-mode-butt-color", "#F5F5DC");
+        setDisplayModeIcon("sun");
+        toggleDarkModeState(true);
+      } else {
+        root.style.setProperty("--highlight-color", "#7ab97a");
+        root.style.setProperty("--backdrop-color", "whitesmoke");
+        root.style.setProperty("--card-background", "whitesmoke");
+        root.style.setProperty("--card-text", "black");
+        root.style.setProperty("--display-mode-butt-color", "black");
+        setDisplayModeIcon("moon");
+        toggleDarkModeState(false);
+      }
+    }
+  };
 
   const switchInfoCard = (isForward: boolean) => {
     let currentCardIndex = InfoCardList.indexOf(displayedCard);
@@ -50,6 +73,11 @@ export default function Home() {
       <section className="flex-centered">
         <div className="links-box">
           <MDBBtn
+            className="m-1 flex-centered social-button display-mode-butt"
+            onClick={() => toggleDarkMode()}>
+            <MDBIcon fas icon={displayModeIcon} size="2xl" />
+          </MDBBtn>
+          <MDBBtn
             className="m-1 flex-centered social-button"
             style={{ backgroundColor: "#0082ca" }}
             href="https://www.linkedin.com/in/harrison-hancock/">
@@ -74,7 +102,6 @@ export default function Home() {
           tag="a"
           color="none"
           className="m-5 arrow-button"
-          style={{ color: "#7ab97a" }}
           onClick={() => {
             switchInfoCard(false);
           }}>
@@ -109,7 +136,6 @@ export default function Home() {
           tag="b"
           color="none"
           className="m-5 arrow-button"
-          style={{ color: "#7ab97a" }}
           onClick={() => {
             switchInfoCard(true);
           }}>

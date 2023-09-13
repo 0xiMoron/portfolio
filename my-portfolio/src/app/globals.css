@@ -1,3 +1,13 @@
+:root {
+  --highlight-color: #7ab97a;
+  --display-mode-butt-color: black;
+  --backdrop-color: whitesmoke;
+  --card-background: whitesmoke;
+  --card-text: black;
+  --card-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
 @media screen and (max-width: 990px) {
   .header-title {
     font-size: 200% !important;
@@ -33,7 +43,7 @@
 }
 
 body {
-  background-color: whitesmoke !important;
+  background-color: var(--backdrop-color) !important;
 }
 
 *::-webkit-scrollbar {
@@ -46,7 +56,7 @@ body {
 
 *::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #7ab97a;
+  background-color: var(--highlight-color);
 }
 
 .flex-centered {
@@ -59,9 +69,18 @@ body {
   height: 90vh;
 }
 
+.arrow-button {
+  color: var(--highlight-color);
+}
+
 .social-button {
   width: 25% !important;
   min-height: 2rem !important;
+}
+
+.display-mode-butt {
+  background-color: var(--display-mode-butt-color) !important;
+  color: #fedc56 !important;
 }
 
 .header-section {
@@ -70,7 +89,7 @@ body {
 
 .header-title {
   font-size: 400%;
-  color: #7ab97a;
+  color: var(--highlight-color);
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
@@ -98,7 +117,7 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: #7ab97a;
+    border-color: var(--highlight-color);
   }
 }
 
@@ -115,9 +134,9 @@ body {
 .card-title {
   display: flex;
   min-height: 20%;
-  background-color: #7ab97a;
+  background-color: var(--highlight-color);
   width: 100%;
-  color: whitesmoke;
+  color: var(--card-background);
   justify-content: center;
   align-items: center;
   font-size: 300%;
@@ -127,18 +146,19 @@ body {
   color: #121212;
   width: 50%;
   height: 80%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: var(--card-shadow) !important;
 }
 
 .card-body {
   overflow: hidden !important;
+  background-color: var(--card-background);
 }
 
 .card-text {
   max-height: 60%;
   overflow-y: scroll !important;
   overflow-x: hidden !important;
+  color: var(--card-text);
   margin: 1%;
 }
 
@@ -147,6 +167,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: var(--highlight-color);
 }
 
 .footer-title-and-links {
@@ -157,6 +178,7 @@ body {
 .footer-title {
   display: flex;
   justify-content: center;
+  color: var(--highlight-color);
 }
 
 .footer-links {
@@ -167,7 +189,7 @@ body {
 }
 
 .card-link-title {
-  color: #7ab97a;
+  color: var(--highlight-color);
 }
 
 .fade-in {
