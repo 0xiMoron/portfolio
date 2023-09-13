@@ -133,7 +133,7 @@ export default function Home() {
           </MDBCardBody>
         </MDBCard>
         <MDBBtn
-          tag="b"
+          tag="a"
           color="none"
           className="m-5 arrow-button"
           onClick={() => {
